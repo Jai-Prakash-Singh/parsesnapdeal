@@ -50,17 +50,19 @@ def main(direc, line):
 
 
     height = driver.execute_script("return $(document ).height();")
-    logging.debug(height)
      
     loop = True
-    while loop is True:
-      
+    while loop is True:      
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         heightnow  = driver.execute_script("return $(document ).height();")
+
+        logging.debug((heightnow, height))
+
         if height == heightnow:
             loop = False
 	else:
-	    loop = True
+	    height = heightnow
+            loop = True
 
         time.sleep(1)
         

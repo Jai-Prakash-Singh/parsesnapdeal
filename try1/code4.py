@@ -4,7 +4,7 @@ import time
 import code3
 import os 
 
-num_fetch_threads = 2
+num_fetch_threads = 10
 enclosure_queue = Queue()
 
 
